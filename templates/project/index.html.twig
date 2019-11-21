@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	Projects
+{% endblock %}
+
+{% block body %}
+	<h3 class="text-center">Projects
+		<a href="{{path('project_new')}}" class="ml-2 btn btn-sm btn-primary">Add New</a>
+	</h3>
+	<div class="row">
+		{% for project in projects %}
+			<div class="col-3">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">{{ project.name }}</h5>
+						<p class="card-text">{{ project.description }}</p>
+						<a href="{{path('project_view', {'project': project.id})}}" class="card-link">View</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

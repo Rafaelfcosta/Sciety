@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	Editing:
+	{{project.name}}
+{% endblock %}
+{% block body %}
+	{{form(projectEditForm)}}{% endblock %}

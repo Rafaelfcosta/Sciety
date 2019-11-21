@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	{{project.name}}
+{% endblock %}
+{% block body %}
+	<div class="clearfix">
+		<a href="{{path('app_projects')}}" class="btn btn-sm btn-warning float-left">View all</a>
+		<a href="{{path('project_edit', {'project': project.id})}}" class="btn btn-sm btn-info float-right">Edit</a>
+	</div>
+
+	<div class="text-center">
+		<h3>{{project.name}}</h3>
+		<p>{{project.description}}</p>
+	</div>
+{% endblock %}

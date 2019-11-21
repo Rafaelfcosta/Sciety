@@ -2,8 +2,8 @@
 
 namespace App\Entity;
 
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -39,7 +39,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Project", mappedBy="owner", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Project", mappedBy="owner", orphanRemoval=true, cascade={"persist"})
      */
     private $projects;
 
